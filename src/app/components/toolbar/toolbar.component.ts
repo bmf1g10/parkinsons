@@ -16,4 +16,8 @@ export class ToolbarComponent {
     this.router.navigate(["/about"]);
   }
 
+  public navigateToHome(){
+    this.router.navigate(["/"]);
+  }
+
 }
