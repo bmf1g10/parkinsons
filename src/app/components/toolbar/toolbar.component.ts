@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class ToolbarComponent {
   constructor(private router:Router){  }
 
-  public navigateToExample(){
-    this.router.navigate(["/example"]);
+  public navigateToGuideline(){
+    this.router.navigate(["/guideline"]);
   }
   public navigateToAbout(){
     this.router.navigate(["/about"]);
