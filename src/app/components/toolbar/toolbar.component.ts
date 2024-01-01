@@ -12,5 +12,8 @@ export class ToolbarComponent {
   public navigateToExample(){
     this.router.navigate(["/example"]);
   }
+  public navigateToAbout(){
+    this.router.navigate(["/about"]);
+  }
 
 }
