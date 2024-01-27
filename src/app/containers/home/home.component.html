@@ -1,1 +1,25 @@
-<p>home works!</p>
+<button (click)="fetchData('https://api.octopus.energy/v1/electricity-meter-points/2000020207240/meters/23J0090903/consumption/')">Fetch Data</button>
+<button *ngIf="data.previous" (click)="loadPrevious()">Previous</button>
+<button *ngIf="data.next" (click)="loadNext()">Next</button>
+
+<div *ngIf="isLoading">
+    <!-- Replace this with your spinner component -->
+    <p>Loading...</p>
+</div>
+<canvas id="myChart"></canvas>
+<table>
+    <thead>
+        <tr>
+            <th>Interval Start</th>
+            <th>Interval End</th>
+            <th>Consumption</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data.results">
+            <td>{{ item.interval_start | date : 'dd/MM/yyyy HH:mm' }}</td>
+            <td>{{ item.interval_end | date : 'dd/MM/yyyy HH:mm' }}</td>
+            <td>{{ item.consumption }}</td>
+        </tr>
+    </tbody>
+</table>

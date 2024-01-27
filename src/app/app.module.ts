@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { ComponentsModule } from './components/components.module';
 import { ContainersModule } from './containers/containers.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { ContainersModule } from './containers/containers.module';
     BrowserAnimationsModule,
     MaterialModule,
     ComponentsModule,
-    ContainersModule
+    ContainersModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
