@@ -2,12 +2,8 @@
 <button *ngIf="data.previous" (click)="loadPrevious()">Previous</button>
 <button *ngIf="data.next" (click)="loadNext()">Next</button>
 
-<div *ngIf="isLoading">
-    <!-- Replace this with your spinner component -->
-    <p>Loading...</p>
-</div>
 <canvas id="myChart"></canvas>
-<table>
+<!-- <table>
     <thead>
         <tr>
             <th>Interval Start</th>
@@ -22,4 +18,4 @@
             <td>{{ item.consumption }}</td>
         </tr>
     </tbody>
-</table>
+</table> -->

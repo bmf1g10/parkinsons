@@ -48,7 +48,7 @@ export class HomeComponent {
         this.data.previous = res.previous;
 
         this.createChart();
-        
+
         this.isLoading = false;
       });
    
@@ -91,13 +91,22 @@ export class HomeComponent {
             beginAtZero: true
           }
         },
+        events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
         plugins: {
           tooltip: {
             enabled: true,
             callbacks: {
               label: function(context) {
-                return 'Consumption: ' + context.parsed.y;
-              }
+                let label = context.dataset.label || '';
+
+                if (label) {
+                    label += ': ';
+                }
+                if (context.parsed.y !== null) {
+                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                }
+                return label;
+            }
             }
           }
         }
